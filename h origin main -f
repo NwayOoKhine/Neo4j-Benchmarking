@@ -1,0 +1,5 @@
+[33mc99727e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m Complete LDBC SNB v2 SF1 dataset loading with sharded Neo4j Fabric
+[33mb8ab071[m[33m ([m[1;31morigin/main[m[33m)[m feat: Add atomicity test and data loading for SF1
+[33m61871c6[m Setup SF1 data loading and fix write operations benchmarking
+[33m27c55ad[m Merge remote-tracking branch 'origin/main'
+[33mbeb1986[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m Initial commit of Neo4j Fabric benchmarking project
