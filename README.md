@@ -11,7 +11,7 @@ This repository contains the complete benchmarking implementation for evaluating
 
 ### Key Findings
 - Cross-shard queries (Q10) show 8-10× higher latency than intra-shard queries (Q11)
-- Fabric coordinator introduces **78% mean latency overhead** and **311% P95 overhead**
+- Fabric coordinator introduces **latency overhead**
 - System experiences connection pool exhaustion at **6-8 concurrent threads**
 - Delete operations create **referential integrity violations** (dangling proxy nodes)
 - Fabric's architectural constraint: **no cross-database writes in single transaction**
@@ -70,7 +70,7 @@ cd Neo4j-Benchmarking
 This script will automatically:
 - Clone the LDBC SNB Interactive v2 Driver
 - Clone the LDBC SNB Interactive v2 Implementations (Cypher)
-- Download the LDBC SNB SF1 dataset (~2-3 GB, **this may take 10-30 minutes**)
+- Download the LDBC SNB SF1 dataset (~2-3 GB)
 - Extract the dataset
 - Build the LDBC driver and Cypher implementation
 
@@ -129,7 +129,7 @@ docker exec neo4j-forums cypher-shell -u neo4j -p password -f /var/lib/neo4j/imp
 # Check Persons shard
 docker exec neo4j-persons cypher-shell -u neo4j -p password \
   "MATCH (p:Person) RETURN count(p) AS personCount"
-# Expected: ~9,892 persons
+# Expected: ~10,925 persons
 
 # Check Forums shard  
 docker exec neo4j-forums cypher-shell -u neo4j -p password \
@@ -209,7 +209,7 @@ java -cp target/cypher-implementation.jar:../../ldbc_snb_interactive_v2_driver/t
   -p ldbc.snb.interactive.updates_dir=../../ldbc_snb_interactive_v2_impls/update-streams/
 ```
 
-**Expected Result:** Fabric adds ~78% mean latency, 311% P95 latency overhead.
+**Expected Result:** Fabric adds latency
 
 ---
 
@@ -389,23 +389,6 @@ ls -lh ldbc_snb_interactive_v2_impls/ldbc-snb-sf1/
 # Re-run setup if needed
 ./setup_environment.sh
 ```
-
----
-
-## 📚 Citation
-
-If you use this benchmark implementation in your research, please cite:
-
-```bibtex
-@mastersthesis{thesis2025fabric,
-  author = {[Your Name]},
-  title = {Performance and Consistency Analysis of Neo4j Fabric Sharding},
-  school = {[Your University]},
-  year = {2025}
-}
-```
-
----
 
 ## 📧 Contact
 
