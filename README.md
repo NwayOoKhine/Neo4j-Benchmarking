@@ -70,7 +70,7 @@ cd Neo4j-Benchmarking
 This script will automatically:
 - Clone the LDBC SNB Interactive v2 Driver
 - Clone the LDBC SNB Interactive v2 Implementations (Cypher)
-- Download the LDBC SNB SF1 dataset (~2-3 GB)
+- Download the LDBC SNB SF1 dataset (~2-3 GB, **this may take 10-30 minutes**)
 - Extract the dataset
 - Build the LDBC driver and Cypher implementation
 - **Apply custom benchmark configurations** (5 benchmark property files)

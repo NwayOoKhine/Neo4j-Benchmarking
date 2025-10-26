@@ -218,5 +218,4 @@ Remove all `USE fabric.*` clauses to enable direct shard connection.
 ## Maintenance
 
 **Last updated:** October 2025  
-**Total modified queries:** 23  
-**Thesis status:** Publication-ready
+**Total modified queries:** 23
