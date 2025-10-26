@@ -417,7 +417,7 @@ For questions about this implementation, please contact:
 
 ## 📄 License
 
-This benchmark implementation is released under [LICENSE TYPE]. The LDBC SNB benchmark framework is used under its respective license.
+The LDBC SNB benchmark framework is used under its respective license.
 
 ---
 
