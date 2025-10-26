@@ -7,7 +7,7 @@ This directory contains **23 modified LDBC SNB query files** used in the thesis 
 | Category | Files | Purpose |
 |----------|-------|---------|
 | **Read Queries** | Q4, Q5, Q9, Q10, Q11 | Thesis benchmark queries |
-| **Direct-Access** | Q10-direct, Q11-direct | Coordinator overhead experiment |
+| **Direct-Access** | Q11-direct | Coordinator overhead experiment |
 | **Delete Operations** | Delete 1-8 | Mixed workload with consistency tests |
 | **Insert/Update Operations** | Update 1-8 | Mixed workload operations |
 
