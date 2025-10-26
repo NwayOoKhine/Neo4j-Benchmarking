@@ -59,7 +59,7 @@ This directory contains **23 modified LDBC SNB query files** used in the thesis 
 **Experiment Results:**
 | Metric | Via Fabric | Direct | Overhead |
 |--------|------------|--------|----------|
-| Mean | 11.98 ms | 6.73 ms | **+78%** |
+| Mean | 27.36 ms | 6.73 ms | **+306%** |
 | P95 | 37 ms | 9 ms | **+311%** |
 
 ---
