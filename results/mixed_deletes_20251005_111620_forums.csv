@@ -1,0 +1,6 @@
+﻿"timestamp","container","database","duration_ms","query_type","is_cross_shard","query_preview"
+"2025-10-05 00:21:06.332","neo4j-forums","forums","21","Generic-Query","False","MATCH (`f`:`Forum` {`id`: $`forumId`})"
+"2025-10-05 00:21:06.400","neo4j-forums","forums","10","Generic-Query","False","MATCH (`f`:`Forum` {`id`: $`forumId`})"
+"2025-10-05 00:21:35.743","neo4j-forums","forums","27401","Generic-Query","False","MATCH (`pid`:`PersonID`)"
+"2025-10-05 00:26:24.576","neo4j-forums","forums","286023","Generic-Query","False","MATCH (`f`:`Forum`)-[:`HAS_MODERATOR`]->(`pid`:`PersonID`)"
+"2025-10-05 00:26:26.438","neo4j-forums","forums","78","Generic-Query","False","MATCH (`pid`:`PersonID`)"

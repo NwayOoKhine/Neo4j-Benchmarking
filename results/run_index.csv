@@ -1,0 +1,7 @@
+timestamp,env,mode,mix,threads,duration_min,cache_state,results_tar,notes
+20251004_002405,sharded,fabric,read,1,1,warm,D:\Honours\Thesis\neo4j-fabric-project\results\sharded\raw\20251004_002405_sanity_check_fabric_read_1t_warm.tar.gz,exit_code=1
+20251004_002425,sharded,fabric,read,1,1,warm,D:\Honours\Thesis\neo4j-fabric-project\results\sharded\raw\20251004_002425_sanity_check_fabric_read_1t_warm.tar.gz,exit_code=1
+20251004_002459,sharded,fabric,read,1,1,warm,D:\Honours\Thesis\neo4j-fabric-project\results\sharded\raw\20251004_002459_sanity_test_fabric_read_1t_warm.tar.gz,exit_code=1
+20251004_004238,sharded,fabric,read,1,5,warm,D:\Honours\Thesis\neo4j-fabric-project\results\sharded\raw\20251004_004238_test_1thread_read_fabric_read_1t_warm.tar.gz,exit_code=1
+20251004_004314,sharded,fabric,read,1,2,warm,D:\Honours\Thesis\neo4j-fabric-project\results\sharded\raw\20251004_004314_test_1t_fabric_read_1t_warm.tar.gz,exit_code=1
+20251004_004401,sharded,fabric,read,1,2,warm,D:\Honours\Thesis\neo4j-fabric-project\results\sharded\raw\20251004_004401_complex_test_1t_fabric_read_1t_warm.tar.gz,exit_code=1

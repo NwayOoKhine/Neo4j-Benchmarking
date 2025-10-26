@@ -1,0 +1,35 @@
+{
+  "excessive_delay_threshold_as_milli" : 1000,
+  "excessive_delay_count" : 48,
+  "excessive_delay_count_per_type" : {
+    "LdbcQuery9" : 2,
+    "LdbcQuery4" : 9,
+    "LdbcQuery5" : 6,
+    "LdbcQuery10" : 10,
+    "LdbcQuery11" : 21
+  },
+  "min_delay_as_milli" : 0,
+  "max_delay_as_milli" : 15515,
+  "mean_delay_as_milli" : 11804,
+  "min_delay_as_milli_per_type" : {
+    "LdbcQuery9" : 11250,
+    "LdbcQuery4" : 5719,
+    "LdbcQuery5" : 5804,
+    "LdbcQuery10" : 0,
+    "LdbcQuery11" : 0
+  },
+  "max_delay_as_milli_per_type" : {
+    "LdbcQuery9" : 14974,
+    "LdbcQuery4" : 15052,
+    "LdbcQuery5" : 15481,
+    "LdbcQuery10" : 15343,
+    "LdbcQuery11" : 15515
+  },
+  "mean_delay_as_milli_per_type" : {
+    "LdbcQuery9" : 13112,
+    "LdbcQuery4" : 12015,
+    "LdbcQuery5" : 12162,
+    "LdbcQuery10" : 11393,
+    "LdbcQuery11" : 11707
+  }
+}

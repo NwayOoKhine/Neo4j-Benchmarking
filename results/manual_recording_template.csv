@@ -1,0 +1,10 @@
+Phase,RunName,Threads,StartTime,EndTime,RuntimeSec,OpsCompleted,ThroughputOpsPerSec,Q1_Late,Q4_Late,Q5_Late,Q9_Late,Q10_Late,Q11_Late,FailureType,CompletedSuccessfully,Notes
+PathA,1thread,1,,,,,,,,,,,,,
+PathA,2threads,2,,,,,,,,,,,,,
+PathA,4threads,4,,,,,,,,,,,,,
+PathA,8threads,8,,,,,,,,,,,,,
+PathA,16threads,16,,,,,,,,,,,,,
+Overhead,fabric_4t,4,,,,,,,,,,,,,
+Overhead,direct_4t,4,,,,,,,,,,,,,
+PathB,relaxed_1t,1,,,,,,,,,,,,,
+

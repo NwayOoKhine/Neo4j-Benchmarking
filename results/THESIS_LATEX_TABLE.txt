@@ -1,0 +1,95 @@
+% LaTeX Table: Consistency Validation Results
+% Copy this into your thesis document
+
+\begin{table}[htbp]
+\centering
+\caption{Consistency Violations Introduced by DELETE Operations in Neo4j Fabric}
+\label{tab:consistency-violations}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Metric} & \textbf{Pre-Benchmark} & \textbf{Post-Benchmark} & \textbf{Change} \\
+\midrule
+Dangling PersonID Proxies      & 0 & 1 & +1 \\
+Dangling Moderator References  & 0 & 4 & +4 \\
+Orphan Proxy Nodes             & 0 & 0 & 0 \\
+\midrule
+\textbf{Total Violations}      & \textbf{0} & \textbf{5} & \textbf{+5} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Violation Rates by Operation Type}
+\label{tab:violation-rates}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Operation Type} & \textbf{Count} & \textbf{Violations} & \textbf{Rate (\%)} \\
+\midrule
+Read Operations         & 1,318  & 0  & 0.0  \\
+Insert Operations       & 3,604  & 0  & 0.0  \\
+Delete Operations       & 77     & 5  & 6.5  \\
+\quad DELETE1 (RemovePerson) & 1 & 5  & 500.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Affected Entities After Person Deletion (ID: 28587302326532)}
+\label{tab:affected-entities}
+\begin{tabular}{lr}
+\toprule
+\textbf{Forum ID} & \textbf{Invalid Moderator Reference} \\
+\midrule
+2061584394761 & 28587302326532 \\
+2199023348231 & 28587302326532 \\
+1786706487814 & 28587302326532 \\
+2199023348232 & 28587302326532 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Performance Characteristics of Mixed Workload with Deletes}
+\label{tab:performance-mixed}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Operation Type} & \textbf{Count} & \textbf{Mean Latency (ms)} \\
+\midrule
+\multicolumn{3}{l}{\textit{Read Operations}} \\
+\quad LdbcQuery4         & 296   & 45.3  \\
+\quad LdbcQuery10        & 355   & 139.5 \\
+\quad LdbcQuery11        & 667   & 15.8  \\
+\midrule
+\multicolumn{3}{l}{\textit{Insert Operations}} \\
+\quad AddPerson          & 2     & 324.0 \\
+\quad AddPostLike        & 359   & 20.0  \\
+\quad AddForumMembership & 2,027 & 17.8  \\
+\quad AddComment         & 882   & 25.4  \\
+\quad AddFriendship      & 195   & 17.0  \\
+\midrule
+\multicolumn{3}{l}{\textit{Delete Operations}} \\
+\quad RemovePerson       & 1     & 151.0 \\
+\quad RemovePostLike     & 14    & 94.5  \\
+\quad RemoveCommentLike  & 47    & 64.1  \\
+\quad RemoveForum        & 3     & 286.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Usage Notes:
+% 1. Requires \usepackage{booktabs} in preamble
+% 2. Use \SI{151}{\milli\second} if using siunitx package
+% 3. Replace \textbf with \textit for less emphasis
+% 4. Adjust [htbp] placement as needed (h=here, t=top, b=bottom, p=page)
+% ============================================================
+

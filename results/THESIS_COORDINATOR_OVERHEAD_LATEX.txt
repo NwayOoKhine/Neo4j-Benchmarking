@@ -1,0 +1,72 @@
+% LaTeX Table: Coordinator Overhead (Fabric vs Direct-to-Shard)
+% Query: LdbcQuery11, Threads: 4, Operations: 500
+
+\begin{table}[htbp]
+\centering
+\caption{Coordinator Overhead: Fabric vs. Direct-to-Shard (LdbcQuery11, 4 Threads)}
+\label{tab:coordinator-overhead}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Metric} & \textbf{Via Fabric} & \textbf{Direct} & \textbf{Overhead} \\
+\midrule
+\multicolumn{4}{l}{\textit{Throughput}} \\
+Operations/sec          & 38.65   & 38.65   & 0.0\% \\
+Duration (sec)          & 12.935  & 12.936  & 0.0\% \\
+\midrule
+\multicolumn{4}{l}{\textit{Latency (milliseconds)}} \\
+Mean                    & 11.98   & 6.73    & +78.0\% \\
+Median (P50)            & 9       & 6       & +50.0\% \\
+90th Percentile         & 17      & 9       & +88.9\% \\
+95th Percentile         & 37      & 9       & \textbf{+311.1\%} \\
+99th Percentile         & 52      & 12      & +333.3\% \\
+\midrule
+\multicolumn{4}{l}{\textit{Absolute Latency Delta (ms)}} \\
+Mean                    & \multicolumn{3}{c}{+5.25 ms} \\
+P95                     & \multicolumn{3}{c}{\textbf{+28 ms}} \\
+P99                     & \multicolumn{3}{c}{+40 ms} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Latency Distribution Comparison}
+\label{tab:coordinator-overhead-distribution}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Percentile} & \textbf{Fabric (ms)} & \textbf{Direct (ms)} & \textbf{$\Delta$ (ms)} \\
+\midrule
+Min       & 6    & 4    & +2 \\
+P50       & 9    & 6    & +3 \\
+P90       & 17   & 9    & +8 \\
+P95       & 37   & 9    & +28 \\
+P99       & 52   & 12   & +40 \\
+Max       & 70   & 64   & +6 \\
+\midrule
+Mean      & 11.98 & 6.73 & +5.25 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+
+% Inline citation examples for thesis text:
+
+% Example 1:
+% Fabric's coordinator introduced a mean latency overhead of 78\% (5.25 ms absolute) 
+% for intra-shard queries (Table~\ref{tab:coordinator-overhead}), with tail latency 
+% penalties reaching 311\% at P95 (28 ms absolute).
+
+% Example 2:
+% While throughput remained identical at 38.65 ops/sec for both configurations, 
+% Fabric's P95 latency (37 ms) was significantly higher than direct shard access 
+% (9 ms), representing a 311\% overhead attributable to query routing and graph 
+% resolution costs~(Table~\ref{tab:coordinator-overhead}).
+
+% Example 3:
+% The coordinator tax was most pronounced at higher percentiles: P50 (+50\%), 
+% P90 (+89\%), P95 (+311\%), and P99 (+333\%), suggesting variable overhead 
+% dependent on query execution complexity~(Table~\ref{tab:coordinator-overhead-distribution}).
+

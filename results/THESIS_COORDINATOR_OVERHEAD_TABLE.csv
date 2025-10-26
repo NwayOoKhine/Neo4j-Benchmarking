@@ -1,0 +1,16 @@
+Metric,Via_Fabric,Direct_to_Shard,Absolute_Delta,Overhead_Percentage
+Throughput (ops/sec),38.65,38.65,0.00,0.0%
+Duration (sec),12.935,12.936,0.001,0.0%
+Mean Latency (ms),11.98,6.73,5.25,78.0%
+Median/P50 (ms),9,6,3,50.0%
+P90 Latency (ms),17,9,8,88.9%
+P95 Latency (ms),37,9,28,311.1%
+P99 Latency (ms),52,12,40,333.3%
+Min Latency (ms),6,4,2,50.0%
+Max Latency (ms),70,64,6,9.4%
+Operations Completed,500,500,0,0.0%
+Thread Count,4,4,0,0.0%
+Query Type,LdbcQuery11,LdbcQuery11,N/A,N/A
+Shard Scope,Intra-Shard,Intra-Shard,N/A,N/A
+Target Shard,Persons,Persons,N/A,N/A
+

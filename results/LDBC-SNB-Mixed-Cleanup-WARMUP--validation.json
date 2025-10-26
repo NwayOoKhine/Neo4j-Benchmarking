@@ -1,0 +1,47 @@
+{
+  "excessive_delay_threshold_as_milli" : 1000,
+  "excessive_delay_count" : 49,
+  "excessive_delay_count_per_type" : {
+    "LdbcInsert5AddForumMembership" : 23,
+    "LdbcInsert7AddComment" : 6,
+    "LdbcInsert4AddForum" : 1,
+    "LdbcQuery4" : 3,
+    "LdbcInsert6AddPost" : 1,
+    "LdbcInsert2AddPostLike" : 4,
+    "LdbcQuery10" : 4,
+    "LdbcQuery11" : 7
+  },
+  "min_delay_as_milli" : 0,
+  "max_delay_as_milli" : 10928,
+  "mean_delay_as_milli" : 8573,
+  "min_delay_as_milli_per_type" : {
+    "LdbcInsert5AddForumMembership" : 0,
+    "LdbcInsert7AddComment" : 1708,
+    "LdbcInsert4AddForum" : 9574,
+    "LdbcQuery4" : 6924,
+    "LdbcInsert6AddPost" : 7964,
+    "LdbcInsert2AddPostLike" : 5122,
+    "LdbcQuery10" : 5384,
+    "LdbcQuery11" : 2632
+  },
+  "max_delay_as_milli_per_type" : {
+    "LdbcInsert5AddForumMembership" : 10928,
+    "LdbcInsert7AddComment" : 9121,
+    "LdbcInsert4AddForum" : 9574,
+    "LdbcQuery4" : 9507,
+    "LdbcInsert6AddPost" : 7964,
+    "LdbcInsert2AddPostLike" : 9051,
+    "LdbcQuery10" : 9826,
+    "LdbcQuery11" : 9551
+  },
+  "mean_delay_as_milli_per_type" : {
+    "LdbcInsert5AddForumMembership" : 9459,
+    "LdbcInsert7AddComment" : 6664,
+    "LdbcInsert4AddForum" : 9574,
+    "LdbcQuery4" : 8427,
+    "LdbcInsert6AddPost" : 7964,
+    "LdbcInsert2AddPostLike" : 8002,
+    "LdbcQuery10" : 8185,
+    "LdbcQuery11" : 7728
+  }
+}

@@ -1,0 +1,39 @@
+Metric,Value,Unit,Notes
+Experiment Date,2025-10-06,Date,
+Total Operations,4999,Count,Reads + Inserts + Deletes
+Duration,155.7,Seconds,2m 36s
+Throughput,32.10,ops/sec,
+Concurrency,1,Threads,Sequential execution
+Delete Operations,77,Count,1.5% of workload
+DELETE1 (RemovePerson),1,Count,CRITICAL OPERATION
+Pre-Benchmark Violations,0,Count,Clean baseline
+Post-Benchmark Violations,5,Count,1 proxy + 4 moderators
+Net Violations,+5,Count,500% amplification
+Deleted Person ID,28587302326532,ID,Key entity
+Affected Forums,4,Count,All had dangling moderator
+Violation Rate,100,Percent,For cross-shard deletes
+Dangling Proxy Count,1,Count,Orphaned PersonID node
+Dangling Moderator Count,4,Count,Invalid HAS_MODERATOR edges
+Orphan Proxy Count,0,Count,All proxies still connected
+INSERT Violation Rate,0,Percent,3604 inserts, 0 violations
+READ Violation Rate,0,Percent,1318 reads, 0 violations
+DELETE Violation Rate,100,Percent,1 delete, 5 violations
+Mean Delete Latency,89.3,ms,Average across all deletes
+DELETE1 Latency,151,ms,Person deletion
+Mean Insert Latency,20.8,ms,72% of workload
+Mean Read Latency,49.1,ms,26% of workload
+Persons Shard Queries,637,Count,Avg 2.06ms
+Forums Shard Queries,10289,Count,Avg 45.11ms
+Max Query Duration,344557,ms,Forums shard outlier
+Baseline Consistency Checks,5,Count,All returned 0 violations
+Reproducibility,100,Percent,1/1 DELETE runs violated
+ACID Atomicity,VIOLATED,Status,Partial commit across shards
+ACID Consistency,VIOLATED,Status,Referential integrity broken
+ACID Isolation,UNKNOWN,Status,Single thread (N/A)
+ACID Durability,MAINTAINED,Status,Data persisted
+CAP Availability,MAINTAINED,Status,System remained responsive
+CAP Partition Tolerance,MAINTAINED,Status,Shards independent
+CAP Consistency,VIOLATED,Status,Cross-shard inconsistency
+Production Safety,UNSAFE,Status,For strong consistency needs
+Recommended Use Case,Read-Heavy,Type,Eventual consistency OK
+
