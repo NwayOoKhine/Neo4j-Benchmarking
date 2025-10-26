@@ -408,6 +408,7 @@ ls -lh ldbc_snb_interactive_v2_impls/ldbc-snb-sf1/
 For questions about this implementation, please contact:
 - **GitHub:** [@NwayOoKhine](https://github.com/NwayOoKhine)
 - **Repository:** https://github.com/NwayOoKhine/Neo4j-Benchmarking
+- **Email:** [@NwayOoKhine](nwayookhine125@gmail.com)
 
 ---
 
