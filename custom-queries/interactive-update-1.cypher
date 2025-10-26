@@ -1,0 +1,28 @@
+CALL {
+  USE fabric.persons
+  MATCH (c:Place {id: $cityId, type: "City"})
+  CREATE (p:Person {
+      id: $personId,
+      firstName: $personFirstName,
+      lastName: $personLastName,
+      gender: $gender,
+      birthday: $birthday,
+      creationDate: $creationDate,
+      locationIP: $locationIP,
+      browserUsed: $browserUsed,
+      languages: $languages,
+      email: $emails
+    })-[:IS_LOCATED_IN]->(c)
+  WITH p, count(*) AS dummy1
+  UNWIND $tagIds AS tagId
+    MATCH (t:Tag {id: tagId})
+    CREATE (p)-[:HAS_INTEREST]->(t)
+  WITH p, count(*) AS dummy2
+  UNWIND $studyAt AS s
+    MATCH (u:University {id: s[0]})
+    CREATE (p)-[:STUDY_AT {classYear: s[1]}]->(u)
+  WITH p, count(*) AS dummy3
+  UNWIND $workAt AS w
+    MATCH (comp:Company {id: w[0]})
+    CREATE (p)-[:WORKS_AT {workFrom: w[1]}]->(comp)
+}

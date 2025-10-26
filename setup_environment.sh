@@ -170,6 +170,39 @@ echo "✓ Cypher implementation built successfully"
 echo ""
 
 ################################################################################
+# Step 7: Apply Custom Configurations
+################################################################################
+
+echo "========================================================================"
+echo "Step 7: Applying Custom Benchmark Configurations"
+echo "========================================================================"
+echo ""
+
+echo "Copying custom benchmark properties..."
+cp -v configs/*.properties ldbc_snb_interactive_v2_impls/cypher/driver/
+
+echo ""
+echo "Copying modified queries to main queries directory..."
+# Copy all modified queries (Q4, Q5, Q9, Q10, Q11, all deletes, all updates)
+cp -v custom-queries/interactive-complex-4.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+cp -v custom-queries/interactive-complex-5.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+cp -v custom-queries/interactive-complex-9.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+cp -v custom-queries/interactive-complex-10.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+cp -v custom-queries/interactive-complex-11.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+cp -v custom-queries/interactive-delete-*.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+cp -v custom-queries/interactive-update-*.cypher ldbc_snb_interactive_v2_impls/cypher/queries/
+
+echo ""
+echo "Creating queries-direct directory and copying direct-access queries..."
+mkdir -p ldbc_snb_interactive_v2_impls/cypher/queries-direct
+cp -v custom-queries/interactive-complex-10-direct.cypher ldbc_snb_interactive_v2_impls/cypher/queries-direct/
+cp -v custom-queries/interactive-complex-11-direct.cypher ldbc_snb_interactive_v2_impls/cypher/queries-direct/
+
+echo ""
+echo "✓ Custom configurations applied successfully"
+echo ""
+
+################################################################################
 # Completion
 ################################################################################
 
@@ -187,6 +220,11 @@ echo ""
 echo "Dataset location: ldbc_snb_interactive_v2_impls/ldbc-snb-sf1/"
 echo "Driver JAR: ldbc_snb_interactive_v2_driver/target/driver.jar"
 echo "Cypher JAR: ldbc_snb_interactive_v2_impls/cypher/target/cypher-implementation.jar"
+echo ""
+echo "Custom configurations:"
+echo "  - 5 benchmark property files copied to driver/"
+echo "  - 23 modified query files copied to queries/"
+echo "  - 2 direct-access queries copied to queries-direct/"
 echo ""
 echo "========================================================================"
 

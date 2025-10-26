@@ -73,6 +73,8 @@ This script will automatically:
 - Download the LDBC SNB SF1 dataset (~2-3 GB)
 - Extract the dataset
 - Build the LDBC driver and Cypher implementation
+- **Apply custom benchmark configurations** (5 benchmark property files)
+- **Apply modified queries** (23 query files for thesis experiments)
 
 ```bash
 chmod +x setup_environment.sh
@@ -80,6 +82,8 @@ chmod +x setup_environment.sh
 ```
 
 **Note:** The download is approximately 2-3 GB and extraction may take 5-10 additional minutes. Please be patient.
+
+**Custom Configurations:** The setup script automatically copies your modified benchmark configs and query files from `configs/` and `custom-queries/` directories. This ensures complete reproducibility with all thesis modifications.
 
 ### Step 3: Start Neo4j Fabric Cluster
 
@@ -270,21 +274,26 @@ neo4j-fabric-project/
 ├── setup_environment.sh                  # Automated environment setup script
 ├── README.md                             # This file
 │
+├── configs/                              # Custom benchmark configurations (tracked in git)
+│   ├── README.md                         # Documentation for each config file
+│   ├── benchmark-pathA.properties        # Experiment 1: Read-only thread sweep
+│   ├── benchmark-overhead-fabric.properties  # Experiment 2a: Via Fabric coordinator
+│   ├── benchmark-overhead-direct.properties  # Experiment 2b: Direct to shard
+│   ├── benchmark-mixed-deletes.properties    # Experiment 3: Mixed with deletes
+│   └── benchmark-mixed-cleanup.properties    # Experiment 4: Cleanup-aware deletes
+│
+├── custom-queries/                       # Modified LDBC queries (tracked in git)
+│   ├── README.md                         # Documentation for all modifications
+│   ├── interactive-complex-{4,5,9,10,11}.cypher      # 5 modified read queries
+│   ├── interactive-complex-{10,11}-direct.cypher     # 2 direct-access queries
+│   ├── interactive-delete-{1-8}.cypher               # 8 modified delete operations
+│   └── interactive-update-{1-8}.cypher               # 8 modified insert operations
+│
 ├── ldbc_snb_interactive_v2_driver/       # LDBC driver (cloned by setup script)
 ├── ldbc_snb_interactive_v2_impls/        # LDBC implementations (cloned by setup script)
 │   └── cypher/
-│       ├── driver/
-│       │   ├── benchmark-pathA.properties              # Experiment 1 config
-│       │   ├── benchmark-overhead-fabric.properties    # Experiment 2a config
-│       │   ├── benchmark-overhead-direct.properties    # Experiment 2b config
-│       │   ├── benchmark-mixed-deletes.properties      # Experiment 3 config
-│       │   └── benchmark-mixed-cleanup.properties      # Experiment 4 config
-│       └── queries/
-│           ├── interactive-complex-*.cypher            # LDBC read queries
-│           ├── interactive-delete-*.cypher             # Delete operations
-│           ├── interactive-insert-*.cypher             # Insert operations
-│           └── queries-direct/
-│               └── interactive-complex-11.cypher       # Q11 without USE fabric.*
+│       ├── driver/                       # Benchmark configs copied from configs/
+│       └── queries/                      # Modified queries copied from custom-queries/
 │
 ├── scripts/
 │   ├── load-persons-data-sf1-complete.cypher          # Persons shard data loader
@@ -304,6 +313,8 @@ neo4j-fabric-project/
     ├── *.json                                         # LDBC result files
     └── *.log                                          # Benchmark console logs
 ```
+
+**Note:** The `configs/` and `custom-queries/` directories contain all thesis-specific modifications and are tracked in git. During setup, these files are automatically copied to the appropriate locations in the cloned LDBC repositories, ensuring complete reproducibility.
 
 ---
 
@@ -389,6 +400,8 @@ ls -lh ldbc_snb_interactive_v2_impls/ldbc-snb-sf1/
 # Re-run setup if needed
 ./setup_environment.sh
 ```
+
+---
 
 ## 📧 Contact
 
