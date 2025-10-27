@@ -2,7 +2,7 @@
 
 ## 📚 Project Overview
 
-This repository contains the complete benchmarking implementation for evaluating **Neo4j Fabric's sharded graph database architecture** using the LDBC Social Network Benchmark (SNB) Interactive Workload. This work is part of a thesis investigating:
+This repository contains the complete benchmarking implementation for evaluating **Neo4j Fabric's sharded graph database architecture** using the LDBC Social Network Benchmark (SNB) Interactive Workload V2. This work is part of a thesis investigating:
 
 - **Performance characteristics** of Neo4j Fabric with cross-shard queries
 - **Coordinator overhead** introduced by the Fabric layer
